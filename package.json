@@ -1,0 +1,21 @@
+{
+  "name": "greeting-app",
+  "version": "1.0.0",
+  "description": "A simple greeting application that calculates age based on user input.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "supertest": "^6.3.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
