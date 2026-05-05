@@ -90,7 +90,20 @@ To build and run the application using Docker, follow these steps:
    ```
 
 The application will be accessible at `http://localhost:3000` in your web browser.
+## app akeyless
 
+┌──────────────────────┐         ┌─────────────────────────┐         ┌──────────────────────┐
+│       GITHUB         │         │     GITHUB WORKFLOW     │         │    AKEYLESS SAAS     │
+│  (Identity Source)   │         │    (Execution Phase)    │         │   (Secret Manager)   │
+├──────────────────────┤         ├─────────────────────────┤         ├──────────────────────┤
+│                      │         │                         │         │                      │
+│  1. Issues signed    │────────>│  2. Passes JWT Token +  │────────>│  3. Verifies Token   │
+│     OIDC JWT Token   │         │     Access ID to Action │         │     against GitHub   │
+│                      │         │                         │         │                      │
+│                      │         │  5. Uses Secret for     │<────────│  4. Authorizes &     │
+│                      │         │     Docker Login        │         │     Sends Secrets    │
+│                      │         │                         │         │                      │
+└──────────────────────┘         └─────────────────────────┘         └──────────────────────┘
 ## License
 
 This project is licensed under the MIT License.
